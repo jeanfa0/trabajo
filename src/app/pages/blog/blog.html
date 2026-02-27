@@ -1,0 +1,200 @@
+<section class="blog" id="blog">
+  <div class="container">
+
+    <div class="blog-header">
+      <span class="section-label">Contenido & Recursos</span>
+      <h2>Blog <span>Tecnológico</span></h2>
+      <p class="section-subtitle">
+        Artículos, guías y novedades del mundo del desarrollo web.
+        Compartimos lo que aprendemos para que tú también crezcas.
+      </p>
+    </div>
+
+    <!-- Post destacado -->
+    <div class="blog-featured">
+      <div class="blog-featured-image">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"
+          class="blog-featured-logo" />
+        <div class="blog-featured-overlay"></div>
+        <span class="blog-category">Framework</span>
+      </div>
+      <div class="blog-featured-content">
+        <div class="blog-meta">
+          <span class="blog-date">15 Feb 2026</span>
+          <span class="blog-read">8 min de lectura</span>
+        </div>
+        <h3>¿Por qué usar Angular en 2026?</h3>
+        <p>Angular ha evolucionado enormemente. Con Signals, el nuevo control flow y el soporte nativo para SSR con
+          Angular Universal, se ha convertido en una de las opciones más sólidas para aplicaciones empresariales de gran
+          escala.</p>
+        <div class="blog-tags">
+          <span>Angular</span>
+          <span>TypeScript</span>
+          <span>Frontend</span>
+        </div>
+        <a href="#" class="service-link">
+          Leer artículo completo
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Grid de posts -->
+    <div class="blog-grid" id="blog-grid">
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
+            class="blog-card-logo" />
+          <div class="blog-card-overlay" style="--c1:#4f5b93; --c2:#787cb4;"></div>
+          <span class="blog-category">Backend</span>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span class="blog-date">10 Feb 2026</span>
+            <span class="blog-read">6 min</span>
+          </div>
+          <h3>PHP sigue siendo relevante en 2026</h3>
+          <p>Cómo PHP moderno con arquitectura MVC y MySQL optimizado sigue siendo la columna vertebral de millones de
+            sistemas empresariales en producción.</p>
+          <div class="blog-tags"><span>PHP</span><span>MySQL</span><span>Backend</span></div>
+          <a href="#" class="service-link">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+            class="blog-card-logo" />
+          <div class="blog-card-overlay" style="--c1:#e44d26; --c2:#f16529;"></div>
+          <span class="blog-category">Frontend</span>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span class="blog-date">3 Feb 2026</span>
+            <span class="blog-read">5 min</span>
+          </div>
+          <h3>HTML5 semántico: la base del SEO técnico</h3>
+          <p>Usar las etiquetas correctas no es solo buena práctica, es la diferencia entre aparecer en Google o no.
+            Guía completa de estructura semántica.</p>
+          <div class="blog-tags"><span>HTML5</span><span>SEO</span><span>Accesibilidad</span></div>
+          <a href="#" class="service-link">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+            class="blog-card-logo" />
+          <div class="blog-card-overlay" style="--c1:#00618a; --c2:#f29111;"></div>
+          <span class="blog-category">Base de Datos</span>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span class="blog-date">28 Ene 2026</span>
+            <span class="blog-read">7 min</span>
+          </div>
+          <h3>Optimizar queries MySQL que matan tu servidor</h3>
+          <p>Índices mal usados, N+1 queries y JOINs sin control son los enemigos silenciosos del rendimiento. Aprende a
+            detectarlos y eliminarlos.</p>
+          <div class="blog-tags"><span>MySQL</span><span>Performance</span><span>SQL</span></div>
+          <a href="#" class="service-link">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+      </div>
+
+      <!-- Cards ocultas — controladas por Angular -->
+      <div class="blog-card" [class.blog-card--hidden]="!expanded" [class.blog-card--visible]="expanded">
+        <div class="blog-card-image">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript" class="blog-card-logo" />
+          <div class="blog-card-overlay" style="--c1:#f7df1e; --c2:#e6c817;"></div>
+          <span class="blog-category">Frontend</span>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span class="blog-date">20 Ene 2026</span>
+            <span class="blog-read">5 min</span>
+          </div>
+          <h3>JavaScript moderno: lo que debes saber en 2026</h3>
+          <p>Async/await, optional chaining, nullish coalescing y las últimas features de ES2025 que todo desarrollador
+            frontend debe dominar hoy.</p>
+          <div class="blog-tags"><span>JavaScript</span><span>ES2025</span><span>Frontend</span></div>
+          <a href="#" class="service-link">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="blog-card" [class.blog-card--hidden]="!expanded" [class.blog-card--visible]="expanded">
+        <div class="blog-card-image">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+            class="blog-card-logo" />
+          <div class="blog-card-overlay" style="--c1:#264de4; --c2:#2965f1;"></div>
+          <span class="blog-category">CSS</span>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span class="blog-date">12 Ene 2026</span>
+            <span class="blog-read">4 min</span>
+          </div>
+          <h3>CSS Grid vs Flexbox: cuándo usar cada uno</h3>
+          <p>Deja de adivinar. Aprende con ejemplos reales cuándo Grid y cuándo Flexbox es la herramienta correcta para
+            tu layout.</p>
+          <div class="blog-tags"><span>CSS3</span><span>Grid</span><span>Flexbox</span></div>
+          <a href="#" class="service-link">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="blog-card" [class.blog-card--hidden]="!expanded" [class.blog-card--visible]="expanded">
+        <div class="blog-card-image">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="API"
+            class="blog-card-logo" />
+          <div class="blog-card-overlay" style="--c1:#0f766e; --c2:#14b8a6;"></div>
+          <span class="blog-category">Backend</span>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span class="blog-date">5 Ene 2026</span>
+            <span class="blog-read">9 min</span>
+          </div>
+          <h3>Cómo construir una API REST segura con PHP</h3>
+          <p>Autenticación con JWT, validación de inputs, manejo de errores y documentación. Todo lo que necesitas para
+            una API profesional lista para producción.</p>
+          <div class="blog-tags"><span>PHP</span><span>REST API</span><span>JWT</span></div>
+          <a href="#" class="service-link">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA ver todos -->
+    <div class="blog-cta">
+      <button class="secondary blog-toggle-btn" (click)="toggleBlogCards()">
+        {{ expanded ? 'Ver menos' : 'Ver todos los artículos' }}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          class="toggle-icon" [style.transform]="expanded ? 'rotate(180deg)' : 'rotate(0deg)'">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,132 @@
+<section class="shop">
+  <div class="shop-container">
+
+    <!-- Header -->
+    <div class="shop-header">
+      <span class="shop-label">Servicios & Productos</span>
+      <h1>Campus <span>Shop</span></h1>
+      <p>Bienvenido, <strong>{{ displayName() }}</strong></p>
+    </div>
+
+    <div class="shop-layout">
+
+      <!-- Productos -->
+      <div class="shop-products">
+        <div class="section-title">
+          <h2>Productos</h2>
+          <span class="product-count">{{ products.length }} artículos</span>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-card" *ngFor="let p of products">
+
+            <div class="product-card-top" [class.on-sale]="p.onSale">
+              <div class="product-icon">
+                <span *ngIf="p.category === 'TECH'">🌐</span>
+                <span *ngIf="p.category === 'HOME'">📈</span>
+                <span *ngIf="p.category === 'FASHION'">📱</span>
+              </div>
+              <div class="product-badge" *ngIf="p.onSale">🔥 Oferta</div>
+            </div>
+
+            <div class="product-card-body">
+              <div class="product-meta">
+                <span class="product-sku">{{ p.sku }}</span>
+                <span class="product-category">{{ p.category }}</span>
+              </div>
+              <h3>{{ p.name | titlecase }}</h3>
+              <p class="product-desc">{{ p.description }}</p>
+
+              <div class="product-pricing">
+                <span class="price-original" *ngIf="p.onSale && p.discount">
+                  S/ {{ p.price | number:'1.2-2' }}
+                </span>
+                <div class="price-row">
+                  <span class="price-final">S/ {{ getFinalPrice(p) | number:'1.2-2' }}</span>
+                  <span class="price-tag" *ngIf="p.onSale && p.discount">-{{ (p.discount! * 100) | number:'1.0-0' }}%</span>
+                </div>
+                <span class="price-label">{{ p.onSale ? 'incl. IGV + descuento' : 'incl. IGV 18%' }}</span>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <span class="stock">
+                <span class="stock-dot" [class.low]="p.stock < 10"></span>
+                {{ p.stock }} disponibles
+              </span>
+              <button class="btn-add" (click)="addToCart(p)" [class.in-cart]="cartQty(p) > 0">
+                <span *ngIf="cartQty(p) === 0">Agregar</span>
+                <span *ngIf="cartQty(p) > 0">En carrito ({{ cartQty(p) }})</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrito -->
+      <div class="shop-cart">
+        <div class="cart-header">
+          <h2>Carrito</h2>
+          <span class="cart-badge" *ngIf="cart.length > 0">{{ cart.length }}</span>
+        </div>
+
+        <!-- Vacío -->
+        <div class="cart-empty" *ngIf="cart.length === 0">
+          <span class="cart-empty-icon">🛒</span>
+          <p>Tu carrito está vacío</p>
+          <small>Agrega productos para comenzar</small>
+        </div>
+
+        <!-- Items -->
+        <ul class="cart-list" *ngIf="cart.length > 0">
+          <li class="cart-item" *ngFor="let c of cart">
+            <div class="cart-item-icon">
+              <span *ngIf="c.product.category === 'TECH'">🌐</span>
+              <span *ngIf="c.product.category === 'HOME'">📈</span>
+              <span *ngIf="c.product.category === 'FASHION'">📱</span>
+            </div>
+            <div class="cart-item-info">
+              <span class="cart-item-name">{{ c.product.name | titlecase }}</span>
+              <span class="cart-item-sku">{{ c.product.sku }}</span>
+              <span class="cart-item-detail">x{{ c.qty }} · S/ {{ c.product.price | number:'1.2-2' }} c/u</span>
+            </div>
+            <div class="cart-item-right">
+              <span class="cart-item-price">S/ {{ (c.product.price * c.qty) | number:'1.2-2' }}</span>
+              <button class="btn-remove" (click)="removeFromCart(c.product)" title="Eliminar">✕</button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Totales -->
+        <div class="cart-totals" *ngIf="cart.length > 0">
+          <div class="cart-row">
+            <span>Subtotal</span>
+            <span>S/ {{ total | number:'1.2-2' }}</span>
+          </div>
+          <div class="cart-row">
+            <span>IGV (18%)</span>
+            <span>S/ {{ (withTax(total) - total) | number:'1.2-2' }}</span>
+          </div>
+          <div class="cart-divider"></div>
+          <div class="cart-row cart-row--total">
+            <span>Total</span>
+            <strong>S/ {{ withTax(total) | number:'1.2-2' }}</strong>
+          </div>
+          <button class="btn-checkout">Comprar ahora →</button>
+        </div>
+
+        <!-- Type Guard Demo -->
+        <div class="type-guard">
+          <span class="type-guard-label">Type Guard Demo</span>
+          <div class="type-guard-codes">
+            <code>{{ debugIsProduct(products[0]) }}</code>
+            <code>{{ debugIsProduct('hola') }}</code>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

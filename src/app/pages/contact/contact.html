@@ -1,0 +1,151 @@
+<section class="contact">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="contact-header">
+      <span class="section-label">Hablemos</span>
+      <h2>¿Listo para tu <span>próximo proyecto</span>?</h2>
+      <p class="section-subtitle">
+        Cuéntanos tu idea y te respondemos en menos de 24 horas.
+        Sin compromisos, sin costos ocultos.
+      </p>
+    </div>
+
+    <div class="contact-wrapper">
+
+      <!-- Info lateral -->
+      <div class="contact-info">
+
+        <div class="contact-info-card">
+          <h3>¿Por qué elegirnos?</h3>
+          <ul class="contact-benefits">
+            <li>
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Código limpio y seguro</strong>
+                <p>Buenas prácticas en cada línea, sin atajos.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 8v4l3 3"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Entrega a tiempo</strong>
+                <p>Cumplimos los plazos acordados, siempre.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Soporte post-lanzamiento</strong>
+                <p>Seguimos contigo después de entregar.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-channels">
+          <p class="contact-channels-label">También puedes escribirnos por</p>
+          <div class="contact-channel-list">
+            <a href="mailto:hola@jeandigital.com" class="contact-channel">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <span class="channel-label">Email</span>
+                <span class="channel-value">hola@jeandigital.com</span>
+              </div>
+            </a>
+            <a href="https://wa.me/1234567890" class="contact-channel">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="channel-label">WhatsApp</span>
+                <span class="channel-value">+1 (234) 567-890</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form-wrapper">
+        <form class="contact-form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Jean Pérez" />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" placeholder="jean@empresa.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="servicio">Servicio de interés</label>
+            <select id="servicio">
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="web">Desarrollo Web</option>
+              <option value="angular">Aplicación Angular</option>
+              <option value="php">Sistema PHP & MySQL</option>
+              <option value="seo">Optimización SEO</option>
+              <option value="mantenimiento">Mantenimiento & Soporte</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="presupuesto">Presupuesto estimado</label>
+            <select id="presupuesto">
+              <option value="" disabled selected>Selecciona un rango</option>
+              <option>Menos de $500</option>
+              <option>$500 — $1,500</option>
+              <option>$1,500 — $5,000</option>
+              <option>Más de $5,000</option>
+              <option>Por definir</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Cuéntanos tu proyecto</label>
+            <textarea id="mensaje" rows="5" placeholder="Describe brevemente qué necesitas, tiempos y cualquier detalle relevante..."></textarea>
+          </div>
+
+          <button type="submit" class="primary contact-submit">
+            <span>Enviar Mensaje</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+
+          <p class="form-note">
+            🔒 Tu información es privada y nunca será compartida con terceros.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

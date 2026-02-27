@@ -1,0 +1,32 @@
+<nav>
+<div class="logo">
+  JEAN <span>DIGITAL</span> <span>AGENCY</span>
+</div>
+
+  <!-- Links desktop -->
+  <div class="nav-links">
+    <a routerLink="" (click)="closeMenu()">Inicio</a>
+    <a routerLink="nosotros" (click)="closeMenu()">Nosotros</a>
+    <a routerLink="servicios" (click)="closeMenu()">Servicios</a>
+    <a routerLink="blog" (click)="closeMenu()">Blog</a>
+    <a routerLink="shop" (click)="closeMenu()">Carrito</a>
+    <a routerLink="contacto" (click)="closeMenu()">Contacto</a>
+  </div>
+
+  <!-- Botón hamburguesa -->
+  <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menú mobile fullscreen -->
+  <div class="mobile-menu" [class.active]="menuOpen">
+    <a routerLink="" (click)="closeMenu()">Inicio</a>
+    <a routerLink="nosotros" (click)="closeMenu()">Nosotros</a>
+    <a routerLink="servicios" (click)="closeMenu()">Servicios</a>
+    <a routerLink="blog" (click)="closeMenu()">Blog</a>
+    <a routerLink="shop" (click)="closeMenu()">Carrito</a>
+    <a routerLink="contacto" (click)="closeMenu()">Contacto</a>
+  </div>
+</nav>
