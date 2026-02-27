@@ -135,6 +135,10 @@ body {
   color: var(--text-primary);
   animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
   word-break: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  padding: 0 8px; /* pequeño margen lateral */
 }
 
 .hero h1 span {
