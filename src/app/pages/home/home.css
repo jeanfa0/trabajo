@@ -31,18 +31,22 @@ body {
   background: var(--bg-deep);
   color: var(--text-primary);
   font-family: var(--font-body);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* ============================================
    HERO
    ============================================ */
 .hero {
-  min-height: 100vh;
+  min-height: 100svh; /* svh respeta la barra del navegador en mobile */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 120px 24px 80px;
+  padding: clamp(100px, 15vw, 120px) clamp(16px, 5vw, 24px) clamp(60px, 8vw, 80px);
   position: relative;
   overflow: hidden;
   background:
@@ -61,16 +65,16 @@ body {
   z-index: 0;
 }
 
-/* Decorative orbs */
+/* Decorative orb */
 .hero::after {
   content: '';
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: clamp(300px, 50vw, 600px);
+  height: clamp(300px, 50vw, 600px);
   border-radius: 50%;
   background: radial-gradient(circle, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
-  top: -150px;
-  right: -150px;
+  top: -100px;
+  right: -100px;
   pointer-events: none;
   z-index: 0;
 }
@@ -84,7 +88,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: clamp(18px, 3vw, 28px);
   text-align: center;
   animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -99,7 +103,7 @@ body {
   border: 1px solid rgba(0, 212, 255, 0.25);
   background: rgba(0, 212, 255, 0.07);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: clamp(11px, 1.5vw, 13px);
   font-weight: 500;
   color: var(--accent);
   letter-spacing: 0.02em;
@@ -112,6 +116,7 @@ body {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 8px var(--accent);
+  flex-shrink: 0;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -123,12 +128,13 @@ body {
 /* ---- Heading ---- */
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(30px, 6vw, 68px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  word-break: break-word;
 }
 
 .hero h1 span {
@@ -140,9 +146,10 @@ body {
 
 /* ---- Description ---- */
 .hero-description {
-  font-size: clamp(15px, 2vw, 18px);
+  font-size: clamp(14px, 2vw, 18px);
   color: var(--text-sub);
   max-width: 620px;
+  width: 100%;
   line-height: 1.75;
   font-weight: 300;
   animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
@@ -156,7 +163,9 @@ body {
 /* ---- Stats ---- */
 .hero-stats {
   display: flex;
-  gap: 48px;
+  gap: clamp(24px, 5vw, 48px);
+  flex-wrap: wrap;
+  justify-content: center;
   animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
 }
 
@@ -169,14 +178,14 @@ body {
 
 .stat-number {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: clamp(22px, 4vw, 32px);
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1;
 }
 
 .stat-label {
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -188,6 +197,7 @@ body {
   gap: 14px;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
   animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
 
@@ -196,11 +206,12 @@ button {
   border: none;
   border-radius: 8px;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: clamp(14px, 1.5vw, 15px);
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-  min-width: 180px;
+  min-width: 160px;
+  white-space: nowrap;
 }
 
 button.primary {
@@ -249,13 +260,14 @@ button.secondary:hover {
   z-index: 1;
   width: 100%;
   max-width: 1100px;
-  margin-top: 72px;
+  margin-top: clamp(48px, 8vw, 72px);
   animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+  padding: 0 clamp(0px, 2vw, 16px);
 }
 
 .specialties-label {
   text-align: center;
-  font-size: 11px;
+  font-size: clamp(10px, 1.2vw, 11px);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -268,13 +280,14 @@ button.secondary:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  width: 100%;
 }
 
 .card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  padding: 28px 24px;
+  padding: clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px);
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -282,6 +295,7 @@ button.secondary:hover {
   cursor: default;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Top accent line */
@@ -317,6 +331,7 @@ button.secondary:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   transition: background 0.3s ease;
 }
 
@@ -333,14 +348,14 @@ button.secondary:hover {
 /* ---- Card Text ---- */
 .card h3 {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: clamp(14px, 1.5vw, 16px);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.01em;
 }
 
 .card p {
-  font-size: 13.5px;
+  font-size: clamp(12px, 1.2vw, 13.5px);
   color: var(--text-muted);
   line-height: 1.65;
   font-weight: 300;
@@ -364,14 +379,15 @@ button.secondary:hover {
   border: 1px solid rgba(0, 212, 255, 0.15);
   border-radius: 100px;
   padding: 3px 10px;
+  white-space: nowrap;
 }
 
 /* ===== CARD BANNER ===== */
 .card-banner {
   position: relative;
-  height: 110px;
+  height: clamp(80px, 10vw, 110px);
   border-radius: 10px 10px 0 0;
-  margin: -28px -24px 20px -24px; /* sangra hasta el borde de la carta */
+  margin: -28px -24px 20px -24px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -398,8 +414,8 @@ button.secondary:hover {
 }
 
 .card-banner-logo {
-  width: 56px;
-  height: 56px;
+  width: clamp(40px, 5vw, 56px);
+  height: clamp(40px, 5vw, 56px);
   object-fit: contain;
   position: relative;
   z-index: 1;
@@ -411,7 +427,6 @@ button.secondary:hover {
   transform: scale(1.1) translateY(-3px);
 }
 
-/* Ajuste del card-body para que respete el nuevo padding */
 .card-body {
   display: flex;
   flex-direction: column;
@@ -435,35 +450,96 @@ button.secondary:hover {
 /* ============================================
    RESPONSIVE
    ============================================ */
+
+/* Tablet grande */
 @media (max-width: 1024px) {
   .specialty-cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 640px) {
+/* Tablet chica */
+@media (max-width: 768px) {
   .hero {
-    padding: 100px 20px 60px;
+    padding: 90px 20px 60px;
+    justify-content: flex-start;
+    padding-top: 100px;
   }
 
   .hero-stats {
-    gap: 28px;
+    gap: 20px;
+  }
+
+  .specialties {
+    margin-top: 40px;
+  }
+
+  .specialty-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero {
+    padding: 90px 16px 48px;
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    gap: 20px;
+  }
+
+  .hero-stats {
+    gap: 20px;
   }
 
   .stat-number {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .specialty-cards {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .buttons {
     flex-direction: column;
-    width: 100%;
+    align-items: stretch;
+    gap: 10px;
   }
 
   button {
     width: 100%;
+    min-width: unset;
+  }
+
+  .card-banner {
+    margin: -20px -16px 16px -16px;
+  }
+}
+
+/* Mobile muy chico */
+@media (max-width: 380px) {
+  .hero {
+    padding: 80px 14px 40px;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 12px 5px 8px;
+  }
+
+  .hero-stats {
+    gap: 16px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 16px 14px;
   }
 }
